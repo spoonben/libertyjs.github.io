@@ -166,12 +166,6 @@ define('libertyjs-dev/callforproposals/template', ['exports'], function (exports
             var el2 = dom.createTextNode("\n      ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("li");
-            var el3 = dom.createTextNode("Submissions are open until May 15th");
-            dom.appendChild(el2, el3);
-            dom.appendChild(el1, el2);
-            var el2 = dom.createTextNode("\n      ");
-            dom.appendChild(el1, el2);
-            var el2 = dom.createElement("li");
             var el3 = dom.createTextNode("\n        We anonymize submissions, to avoid bias.\n      ");
             dom.appendChild(el2, el3);
             dom.appendChild(el1, el2);
@@ -1450,6 +1444,7 @@ define('libertyjs-dev/router', ['exports', 'ember', 'libertyjs-dev/config/enviro
     this.route('sponsorship');
     this.route('sponsors');
     this.route('codeofconduct');
+    this.route('volunteer');
   });
 
 });
@@ -1528,7 +1523,7 @@ define('libertyjs-dev/schedule/template', ['exports'], function (exports) {
           var el2 = dom.createTextNode("    ");
           dom.appendChild(el1, el2);
           var el2 = dom.createElement("span");
-          var el3 = dom.createTextNode("chedule");
+          var el3 = dom.createTextNode("Schedule");
           dom.appendChild(el2, el3);
           dom.appendChild(el1, el2);
           var el2 = dom.createTextNode("\n  ");
@@ -3189,6 +3184,42 @@ define('libertyjs-dev/templates/application', ['exports'], function (exports) {
               hasRendered: false,
               build: function build(dom) {
                 var el0 = dom.createDocumentFragment();
+                var el1 = dom.createTextNode("Volunteer");
+                dom.appendChild(el0, el1);
+                return el0;
+              },
+              render: function render(context, env, contextualElement) {
+                var dom = env.dom;
+                dom.detectNamespace(contextualElement);
+                var fragment;
+                if (env.useFragmentCache && dom.canClone) {
+                  if (this.cachedFragment === null) {
+                    fragment = this.build(dom);
+                    if (this.hasRendered) {
+                      this.cachedFragment = fragment;
+                    } else {
+                      this.hasRendered = true;
+                    }
+                  }
+                  if (this.cachedFragment) {
+                    fragment = dom.cloneNode(this.cachedFragment, true);
+                  }
+                } else {
+                  fragment = this.build(dom);
+                }
+                return fragment;
+              }
+            };
+          }());
+          var child7 = (function() {
+            return {
+              isHTMLBars: true,
+              revision: "Ember@1.11.1",
+              blockParams: 0,
+              cachedFragment: null,
+              hasRendered: false,
+              build: function build(dom) {
+                var el0 = dom.createDocumentFragment();
                 var el1 = dom.createTextNode("Code of Conduct");
                 dom.appendChild(el0, el1);
                 return el0;
@@ -3231,6 +3262,12 @@ define('libertyjs-dev/templates/application', ['exports'], function (exports) {
               var el2 = dom.createTextNode("\n        ");
               dom.appendChild(el1, el2);
               var el2 = dom.createElement("ul");
+              var el3 = dom.createTextNode("\n          ");
+              dom.appendChild(el2, el3);
+              var el3 = dom.createElement("li");
+              var el4 = dom.createComment("");
+              dom.appendChild(el3, el4);
+              dom.appendChild(el2, el3);
               var el3 = dom.createTextNode("\n          ");
               dom.appendChild(el2, el3);
               var el3 = dom.createElement("li");
@@ -3325,13 +3362,15 @@ define('libertyjs-dev/templates/application', ['exports'], function (exports) {
               var morph4 = dom.createMorphAt(dom.childAt(element1, [9]),0,0);
               var morph5 = dom.createMorphAt(dom.childAt(element1, [11]),0,0);
               var morph6 = dom.createMorphAt(dom.childAt(element1, [13]),0,0);
+              var morph7 = dom.createMorphAt(dom.childAt(element1, [15]),0,0);
               block(env, morph0, context, "link-to", ["index"], {}, child0, null);
               block(env, morph1, context, "link-to", ["tickets"], {}, child1, null);
               block(env, morph2, context, "link-to", ["callforproposals"], {}, child2, null);
               block(env, morph3, context, "link-to", ["schedule"], {}, child3, null);
               block(env, morph4, context, "link-to", ["sponsors"], {}, child4, null);
               block(env, morph5, context, "link-to", ["sponsorship"], {}, child5, null);
-              block(env, morph6, context, "link-to", ["codeofconduct"], {}, child6, null);
+              block(env, morph6, context, "link-to", ["volunteer"], {}, child6, null);
+              block(env, morph7, context, "link-to", ["codeofconduct"], {}, child7, null);
               return fragment;
             }
           };
@@ -4754,6 +4793,41 @@ define('libertyjs-dev/tests/unit/tickets/route-test.jshint', function () {
   });
 
 });
+define('libertyjs-dev/tests/unit/volunteer/route-test', ['ember-qunit'], function (ember_qunit) {
+
+  'use strict';
+
+  ember_qunit.moduleFor('route:volunteer', {});
+
+  ember_qunit.test('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+
+  // Specify the other units that are required for this test.
+  // needs: ['controller:foo']
+
+});
+define('libertyjs-dev/tests/unit/volunteer/route-test.jshint', function () {
+
+  'use strict';
+
+  module('JSHint - unit/volunteer');
+  test('unit/volunteer/route-test.js should pass jshint', function() { 
+    ok(true, 'unit/volunteer/route-test.js should pass jshint.'); 
+  });
+
+});
+define('libertyjs-dev/tests/volunteer/route.jshint', function () {
+
+  'use strict';
+
+  module('JSHint - volunteer');
+  test('volunteer/route.js should pass jshint', function() { 
+    ok(true, 'volunteer/route.js should pass jshint.'); 
+  });
+
+});
 define('libertyjs-dev/tickets/route', ['exports', 'ember'], function (exports, Ember) {
 
 	'use strict';
@@ -4877,19 +4951,359 @@ define('libertyjs-dev/tickets/template', ['exports'], function (exports) {
             var el0 = dom.createDocumentFragment();
             var el1 = dom.createTextNode("    ");
             dom.appendChild(el0, el1);
-            var el1 = dom.createElement("p");
-            var el2 = dom.createTextNode("\n      Tickets are not availiable yet.  We will keep you posted on Twitter:\n      ");
-            dom.appendChild(el1, el2);
-            var el2 = dom.createElement("a");
-            dom.setAttribute(el2,"href","https://twitter.com/phillyjsdev");
-            dom.setAttribute(el2,"target","_blank");
-            var el3 = dom.createTextNode("@phillyjsdev");
-            dom.appendChild(el2, el3);
-            dom.appendChild(el1, el2);
+            var el1 = dom.createElement("iframe");
+            dom.setAttribute(el1,"frameborder","0");
+            dom.setAttribute(el1,"width","400");
+            dom.setAttribute(el1,"height","400");
+            dom.setAttribute(el1,"src","http://peatix.com/event/90362/share/widget?a=1&t=1");
             var el2 = dom.createTextNode("\n    ");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          render: function render(context, env, contextualElement) {
+            var dom = env.dom;
+            dom.detectNamespace(contextualElement);
+            var fragment;
+            if (env.useFragmentCache && dom.canClone) {
+              if (this.cachedFragment === null) {
+                fragment = this.build(dom);
+                if (this.hasRendered) {
+                  this.cachedFragment = fragment;
+                } else {
+                  this.hasRendered = true;
+                }
+              }
+              if (this.cachedFragment) {
+                fragment = dom.cloneNode(this.cachedFragment, true);
+              }
+            } else {
+              fragment = this.build(dom);
+            }
+            return fragment;
+          }
+        };
+      }());
+      return {
+        isHTMLBars: true,
+        revision: "Ember@1.11.1",
+        blockParams: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        build: function build(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        render: function render(context, env, contextualElement) {
+          var dom = env.dom;
+          var hooks = env.hooks, block = hooks.block;
+          dom.detectNamespace(contextualElement);
+          var fragment;
+          if (env.useFragmentCache && dom.canClone) {
+            if (this.cachedFragment === null) {
+              fragment = this.build(dom);
+              if (this.hasRendered) {
+                this.cachedFragment = fragment;
+              } else {
+                this.hasRendered = true;
+              }
+            }
+            if (this.cachedFragment) {
+              fragment = dom.cloneNode(this.cachedFragment, true);
+            }
+          } else {
+            fragment = this.build(dom);
+          }
+          var morph0 = dom.createMorphAt(fragment,0,0,contextualElement);
+          dom.insertBoundary(fragment, null);
+          dom.insertBoundary(fragment, 0);
+          block(env, morph0, context, "paper-card-content", [], {}, child0, null);
+          return fragment;
+        }
+      };
+    }());
+    return {
+      isHTMLBars: true,
+      revision: "Ember@1.11.1",
+      blockParams: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      build: function build(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      render: function render(context, env, contextualElement) {
+        var dom = env.dom;
+        var hooks = env.hooks, block = hooks.block;
+        dom.detectNamespace(contextualElement);
+        var fragment;
+        if (env.useFragmentCache && dom.canClone) {
+          if (this.cachedFragment === null) {
+            fragment = this.build(dom);
+            if (this.hasRendered) {
+              this.cachedFragment = fragment;
+            } else {
+              this.hasRendered = true;
+            }
+          }
+          if (this.cachedFragment) {
+            fragment = dom.cloneNode(this.cachedFragment, true);
+          }
+        } else {
+          fragment = this.build(dom);
+        }
+        var morph0 = dom.createMorphAt(fragment,0,0,contextualElement);
+        var morph1 = dom.createMorphAt(fragment,2,2,contextualElement);
+        dom.insertBoundary(fragment, null);
+        dom.insertBoundary(fragment, 0);
+        block(env, morph0, context, "paper-toolbar", [], {}, child0, null);
+        block(env, morph1, context, "paper-card", [], {}, child1, null);
+        return fragment;
+      }
+    };
+  }()));
+
+});
+define('libertyjs-dev/volunteer/route', ['exports', 'ember'], function (exports, Ember) {
+
+	'use strict';
+
+	exports['default'] = Ember['default'].Route.extend({});
+
+});
+define('libertyjs-dev/volunteer/template', ['exports'], function (exports) {
+
+  'use strict';
+
+  exports['default'] = Ember.HTMLBars.template((function() {
+    var child0 = (function() {
+      var child0 = (function() {
+        return {
+          isHTMLBars: true,
+          revision: "Ember@1.11.1",
+          blockParams: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          build: function build(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("      ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          render: function render(context, env, contextualElement) {
+            var dom = env.dom;
+            var hooks = env.hooks, inline = hooks.inline;
+            dom.detectNamespace(contextualElement);
+            var fragment;
+            if (env.useFragmentCache && dom.canClone) {
+              if (this.cachedFragment === null) {
+                fragment = this.build(dom);
+                if (this.hasRendered) {
+                  this.cachedFragment = fragment;
+                } else {
+                  this.hasRendered = true;
+                }
+              }
+              if (this.cachedFragment) {
+                fragment = dom.cloneNode(this.cachedFragment, true);
+              }
+            } else {
+              fragment = this.build(dom);
+            }
+            var morph0 = dom.createMorphAt(fragment,1,1,contextualElement);
+            inline(env, morph0, context, "paper-icon", [], {"icon": "menu"});
+            return fragment;
+          }
+        };
+      }());
+      return {
+        isHTMLBars: true,
+        revision: "Ember@1.11.1",
+        blockParams: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        build: function build(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("  ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("h2");
+          dom.setAttribute(el1,"class","md-toolbar-tools");
+          var el2 = dom.createTextNode("\n");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("    ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("span");
+          var el3 = dom.createTextNode("Volunteer");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n  ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        render: function render(context, env, contextualElement) {
+          var dom = env.dom;
+          var hooks = env.hooks, block = hooks.block;
+          dom.detectNamespace(contextualElement);
+          var fragment;
+          if (env.useFragmentCache && dom.canClone) {
+            if (this.cachedFragment === null) {
+              fragment = this.build(dom);
+              if (this.hasRendered) {
+                this.cachedFragment = fragment;
+              } else {
+                this.hasRendered = true;
+              }
+            }
+            if (this.cachedFragment) {
+              fragment = dom.cloneNode(this.cachedFragment, true);
+            }
+          } else {
+            fragment = this.build(dom);
+          }
+          var morph0 = dom.createMorphAt(dom.childAt(fragment, [1]),1,1);
+          block(env, morph0, context, "paper-sidenav-toggle", [], {"class": "menu-sidenav-toggle"}, child0, null);
+          return fragment;
+        }
+      };
+    }());
+    var child1 = (function() {
+      var child0 = (function() {
+        return {
+          isHTMLBars: true,
+          revision: "Ember@1.11.1",
+          blockParams: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          build: function build(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("\n  ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("h3");
+            var el2 = dom.createTextNode("Want to be part of the best JS conference in Philadelphia?!");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n  ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("\n    We’re organizing volunteers for Liberty JS, an all-day javascript conference\n    at Impact Hub on June 20th, 2015.\n  ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n  ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("h4");
+            var el2 = dom.createTextNode("\n    We need people like you.\n  ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n  ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("h5");
+            var el2 = dom.createTextNode("\n    You could:\n  ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n  ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("ul");
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("li");
+            var el3 = dom.createTextNode("\n      Help the caterering companies set up for breakfast or lunch or deck party\n    ");
+            dom.appendChild(el2, el3);
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("li");
+            var el3 = dom.createTextNode("\n      Being a TA/Room Techie\n    ");
+            dom.appendChild(el2, el3);
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("li");
+            var el3 = dom.createTextNode("\n      General setup\n    ");
+            dom.appendChild(el2, el3);
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("li");
+            var el3 = dom.createTextNode("\n      General Tear down\n    ");
+            dom.appendChild(el2, el3);
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("li");
+            var el3 = dom.createTextNode("\n      Job board setup\n    ");
+            dom.appendChild(el2, el3);
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("li");
+            var el3 = dom.createTextNode("\n      Registration/sign-in\n    ");
+            dom.appendChild(el2, el3);
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("li");
+            var el3 = dom.createTextNode("\n      Social media\n    ");
+            dom.appendChild(el2, el3);
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("li");
+            var el3 = dom.createTextNode("\n      Random floor/navigation/event support\n    ");
+            dom.appendChild(el2, el3);
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n  ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n  ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("\n    We’re aiming for 2-3 hour shifts during the event if we get enough people.\n    So bring your friends!\n  ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n  ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("\n    For our thanks you don’t have to pay to get into the event, we’ll give you a\n    free T-shirt to wear (?) and we’ll do our best to arrange for you to attend\n    the segments you're interested in.\n  ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n  ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("\n    We plan to communicate via google hangouts so we can help each other out. If\n    you aren't on gmail, don’t let that stop you from signing up! (If you have\n    already paid and decided to volunteer instead, please let me know.)\n  ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n  ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("\n    Fill out the form below and we’ll send you an email with details on what\n    time to show up, and will invite you to the chatroom that day. The more the\n    merrier!\n  ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n  ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("FORM COMING SOON!");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n");
             dom.appendChild(el0, el1);
             return el0;
           },
@@ -5032,7 +5446,7 @@ catch(err) {
 if (runningTests) {
   require("libertyjs-dev/tests/test-helper");
 } else {
-  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.dfe67934"});
+  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.34cbfb19"});
 }
 
 /* jshint ignore:end */
