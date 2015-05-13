@@ -5299,8 +5299,14 @@ define('libertyjs-dev/volunteer/template', ['exports'], function (exports) {
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n  ");
             dom.appendChild(el0, el1);
-            var el1 = dom.createElement("p");
-            var el2 = dom.createTextNode("FORM COMING SOON!");
+            var el1 = dom.createElement("iframe");
+            dom.setAttribute(el1,"src","https://docs.google.com/forms/d/1VvwYRgnt1_mMZQHh6-_94h2CE11-I1OGiq9H44PiFCc/viewform?embedded=true");
+            dom.setAttribute(el1,"width","500");
+            dom.setAttribute(el1,"height","1250");
+            dom.setAttribute(el1,"frameborder","0");
+            dom.setAttribute(el1,"marginheight","0");
+            dom.setAttribute(el1,"marginwidth","0");
+            var el2 = dom.createTextNode("\n    Loading...\n  ");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n");
@@ -5446,7 +5452,7 @@ catch(err) {
 if (runningTests) {
   require("libertyjs-dev/tests/test-helper");
 } else {
-  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.34cbfb19"});
+  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.00770f4d"});
 }
 
 /* jshint ignore:end */
