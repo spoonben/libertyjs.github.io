@@ -211,7 +211,7 @@ define('libertyjs-dev/callforproposals/template', ['exports'], function (exports
             var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("p");
-            var el2 = dom.createTextNode("\n      We are looking for five speakers for the afternoon session.  All topics\n      are welcome but should involve JavaScript. Please take into account that\n      LibertyJS attendees will of varied skill levels.\n    ");
+            var el2 = dom.createTextNode("\n      We are looking for five speakers for the afternoon session.  All topics\n      are welcome but should involve JavaScript. Please take into account that\n      LibertyJS attendees will be of varied skill levels.\n    ");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n    ");
@@ -1096,10 +1096,34 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n    ");
             dom.appendChild(el0, el1);
-            var el1 = dom.createElement("a");
-            dom.setAttribute(el1,"href","http://philadelphia.impacthub.net/");
-            dom.setAttribute(el1,"target","_blank");
-            var el2 = dom.createTextNode("Impact Hub Philadelphia");
+            var el1 = dom.createElement("div");
+            dom.setAttribute(el1,"class","google-maps");
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("iframe");
+            dom.setAttribute(el2,"src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.6806119456114!2d-75.14261199999999!3d39.970893000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c871dfc8abef%3A0xca81755991ee7356!2sImpact+Hub+Philadelphia!5e0!3m2!1sen!2sus!4v1431988110556");
+            dom.setAttribute(el2,"width","500");
+            dom.setAttribute(el2,"height","450");
+            dom.setAttribute(el2,"frameborder","0");
+            dom.setAttribute(el2,"style","border:0");
+            var el3 = dom.createTextNode("\n      ");
+            dom.appendChild(el2, el3);
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("a");
+            dom.setAttribute(el2,"href","http://philadelphia.impacthub.net/");
+            dom.setAttribute(el2,"target","_blank");
+            var el3 = dom.createTextNode("\n        Impact Hub Philadelphia\n      ");
+            dom.appendChild(el2, el3);
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n");
@@ -3148,42 +3172,6 @@ define('libertyjs-dev/templates/application', ['exports'], function (exports) {
               hasRendered: false,
               build: function build(dom) {
                 var el0 = dom.createDocumentFragment();
-                var el1 = dom.createTextNode("Sponsorship");
-                dom.appendChild(el0, el1);
-                return el0;
-              },
-              render: function render(context, env, contextualElement) {
-                var dom = env.dom;
-                dom.detectNamespace(contextualElement);
-                var fragment;
-                if (env.useFragmentCache && dom.canClone) {
-                  if (this.cachedFragment === null) {
-                    fragment = this.build(dom);
-                    if (this.hasRendered) {
-                      this.cachedFragment = fragment;
-                    } else {
-                      this.hasRendered = true;
-                    }
-                  }
-                  if (this.cachedFragment) {
-                    fragment = dom.cloneNode(this.cachedFragment, true);
-                  }
-                } else {
-                  fragment = this.build(dom);
-                }
-                return fragment;
-              }
-            };
-          }());
-          var child6 = (function() {
-            return {
-              isHTMLBars: true,
-              revision: "Ember@1.11.1",
-              blockParams: 0,
-              cachedFragment: null,
-              hasRendered: false,
-              build: function build(dom) {
-                var el0 = dom.createDocumentFragment();
                 var el1 = dom.createTextNode("Volunteer");
                 dom.appendChild(el0, el1);
                 return el0;
@@ -3211,7 +3199,7 @@ define('libertyjs-dev/templates/application', ['exports'], function (exports) {
               }
             };
           }());
-          var child7 = (function() {
+          var child6 = (function() {
             return {
               isHTMLBars: true,
               revision: "Ember@1.11.1",
@@ -3307,12 +3295,6 @@ define('libertyjs-dev/templates/application', ['exports'], function (exports) {
               var el3 = dom.createTextNode("\n          ");
               dom.appendChild(el2, el3);
               var el3 = dom.createElement("li");
-              var el4 = dom.createComment("");
-              dom.appendChild(el3, el4);
-              dom.appendChild(el2, el3);
-              var el3 = dom.createTextNode("\n          ");
-              dom.appendChild(el2, el3);
-              var el3 = dom.createElement("li");
               var el4 = dom.createTextNode("\n            ");
               dom.appendChild(el3, el4);
               var el4 = dom.createElement("a");
@@ -3362,15 +3344,13 @@ define('libertyjs-dev/templates/application', ['exports'], function (exports) {
               var morph4 = dom.createMorphAt(dom.childAt(element1, [9]),0,0);
               var morph5 = dom.createMorphAt(dom.childAt(element1, [11]),0,0);
               var morph6 = dom.createMorphAt(dom.childAt(element1, [13]),0,0);
-              var morph7 = dom.createMorphAt(dom.childAt(element1, [15]),0,0);
               block(env, morph0, context, "link-to", ["index"], {}, child0, null);
               block(env, morph1, context, "link-to", ["tickets"], {}, child1, null);
               block(env, morph2, context, "link-to", ["callforproposals"], {}, child2, null);
               block(env, morph3, context, "link-to", ["schedule"], {}, child3, null);
               block(env, morph4, context, "link-to", ["sponsors"], {}, child4, null);
-              block(env, morph5, context, "link-to", ["sponsorship"], {}, child5, null);
-              block(env, morph6, context, "link-to", ["volunteer"], {}, child6, null);
-              block(env, morph7, context, "link-to", ["codeofconduct"], {}, child7, null);
+              block(env, morph5, context, "link-to", ["volunteer"], {}, child5, null);
+              block(env, morph6, context, "link-to", ["codeofconduct"], {}, child6, null);
               return fragment;
             }
           };
@@ -5231,7 +5211,7 @@ define('libertyjs-dev/volunteer/template', ['exports'], function (exports) {
             var el2 = dom.createTextNode("\n    ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("li");
-            var el3 = dom.createTextNode("\n      Being a TA/Room Techie\n    ");
+            var el3 = dom.createTextNode("\n      Be a TA/Room Techie\n    ");
             dom.appendChild(el2, el3);
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n    ");
@@ -5243,7 +5223,7 @@ define('libertyjs-dev/volunteer/template', ['exports'], function (exports) {
             var el2 = dom.createTextNode("\n    ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("li");
-            var el3 = dom.createTextNode("\n      General Tear down\n    ");
+            var el3 = dom.createTextNode("\n      General tear down\n    ");
             dom.appendChild(el2, el3);
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n    ");
@@ -5282,13 +5262,13 @@ define('libertyjs-dev/volunteer/template', ['exports'], function (exports) {
             var el1 = dom.createTextNode("\n\n  ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("p");
-            var el2 = dom.createTextNode("\n    For our thanks you don’t have to pay to get into the event, we’ll give you a\n    free T-shirt to wear (?) and we’ll do our best to arrange for you to attend\n    the segments you're interested in.\n  ");
+            var el2 = dom.createTextNode("\n    You'll get lots of thank-you's, free entry, a free t-shirt and our best\n    attempt for you to attend the sessions you want to participate in.\n  ");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n  ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("p");
-            var el2 = dom.createTextNode("\n    We plan to communicate via google hangouts so we can help each other out. If\n    you aren't on gmail, don’t let that stop you from signing up! (If you have\n    already paid and decided to volunteer instead, please let me know.)\n  ");
+            var el2 = dom.createTextNode("\n    We plan to communicate via google hangouts so we can help each other out. If\n    you aren't on gmail, don’t let that stop you from signing up!\n  ");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n  ");
@@ -5452,7 +5432,7 @@ catch(err) {
 if (runningTests) {
   require("libertyjs-dev/tests/test-helper");
 } else {
-  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.00770f4d"});
+  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.af8fbec3"});
 }
 
 /* jshint ignore:end */
