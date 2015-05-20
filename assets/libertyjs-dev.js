@@ -1089,6 +1089,12 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
             var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("\n      Come to LibertyJS for a full day of workshops, talks, and lots of JavaScript fun!\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
             var el2 = dom.createTextNode("\n      Saturday, June 20th, 2015 at\n      ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("a");
@@ -5438,7 +5444,7 @@ catch(err) {
 if (runningTests) {
   require("libertyjs-dev/tests/test-helper");
 } else {
-  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.af8fbec3"});
+  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.2caaad29"});
 }
 
 /* jshint ignore:end */
