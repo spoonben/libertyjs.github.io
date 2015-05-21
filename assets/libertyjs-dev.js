@@ -216,6 +216,12 @@ define('libertyjs-dev/callforproposals/template', ['exports'], function (exports
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
+            var el1 = dom.createElement("h3");
+            var el2 = dom.createTextNode("Call for Proposals ends Friday 5/29/2015");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
             var el1 = dom.createElement("iframe");
             dom.setAttribute(el1,"src","https://docs.google.com/forms/d/1iK_SvZ2hqv2_gQQZWC8P6X3ToCyBN4PyeoW-hSkFQFk/viewform?embedded=true");
             dom.setAttribute(el1,"width","500");
