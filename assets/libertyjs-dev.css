@@ -3498,7 +3498,7 @@ md-card {
 
 .google-maps {
   position: relative;
-  padding-bottom: 90%;
+  padding-bottom: 38%;
   height: 0;
   overflow: hidden; }
 
@@ -3506,5 +3506,4 @@ md-card {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100% !important;
-  height: 100% !important; }
+  width: 100% !important; }

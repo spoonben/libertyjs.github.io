@@ -216,6 +216,12 @@ define('libertyjs-dev/callforproposals/template', ['exports'], function (exports
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
+            var el1 = dom.createElement("h3");
+            var el2 = dom.createTextNode("Call for Proposals ends Friday 5/29/2015");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
             var el1 = dom.createElement("iframe");
             dom.setAttribute(el1,"src","https://docs.google.com/forms/d/1iK_SvZ2hqv2_gQQZWC8P6X3ToCyBN4PyeoW-hSkFQFk/viewform?embedded=true");
             dom.setAttribute(el1,"width","500");
@@ -1089,12 +1095,12 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
             var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("p");
-            var el2 = dom.createTextNode("\n      Saturday, June 20th, 2015 at\n      ");
+            var el2 = dom.createTextNode("\n      Saturday, June 20th, 2015 at ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("a");
-            dom.setAttribute(el2,"href","https://twitter.com/phillyjsdev");
+            dom.setAttribute(el2,"href","http://philadelphia.impacthub.net/");
             dom.setAttribute(el2,"target","_blank");
-            var el3 = dom.createTextNode("@phillyjsdev");
+            var el3 = dom.createTextNode("Impact Hub Philadelphia");
             dom.appendChild(el2, el3);
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n    ");
@@ -1109,24 +1115,10 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
             var el2 = dom.createElement("iframe");
             dom.setAttribute(el2,"src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.6806119456114!2d-75.14261199999999!3d39.970893000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c871dfc8abef%3A0xca81755991ee7356!2sImpact+Hub+Philadelphia!5e0!3m2!1sen!2sus!4v1431988110556");
             dom.setAttribute(el2,"width","500");
-            dom.setAttribute(el2,"height","450");
+            dom.setAttribute(el2,"height","250");
             dom.setAttribute(el2,"frameborder","0");
             dom.setAttribute(el2,"style","border:0");
             var el3 = dom.createTextNode("\n      ");
-            dom.appendChild(el2, el3);
-            dom.appendChild(el1, el2);
-            var el2 = dom.createTextNode("\n    ");
-            dom.appendChild(el1, el2);
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n    ");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createElement("p");
-            var el2 = dom.createTextNode("\n      ");
-            dom.appendChild(el1, el2);
-            var el2 = dom.createElement("a");
-            dom.setAttribute(el2,"href","http://philadelphia.impacthub.net/");
-            dom.setAttribute(el2,"target","_blank");
-            var el3 = dom.createTextNode("\n        Impact Hub Philadelphia\n      ");
             dom.appendChild(el2, el3);
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n    ");
@@ -1261,6 +1253,12 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n    ");
             dom.appendChild(el0, el1);
+            var el1 = dom.createElement("h3");
+            var el2 = dom.createTextNode("Silver");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n    ");
+            dom.appendChild(el0, el1);
             var el1 = dom.createElement("a");
             dom.setAttribute(el1,"href","http://financialsystems.sungard.com/services/consulting-services");
             dom.setAttribute(el1,"title","SunGard Consulting Services Website");
@@ -1269,6 +1267,26 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
             var el2 = dom.createElement("img");
             dom.setAttribute(el2,"src","/assets/images/sungard-logo.jpg");
             dom.setAttribute(el2,"alt","SunGard Logo");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("h3");
+            var el2 = dom.createTextNode("Bronze");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("a");
+            dom.setAttribute(el1,"href","https://www.promptworks.com/");
+            dom.setAttribute(el1,"title","Promptworks");
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("img");
+            dom.setAttribute(el2,"src","/assets/images/promptworks-logo.png");
+            dom.setAttribute(el2,"alt","Promptworks Logo");
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n    ");
             dom.appendChild(el1, el2);
@@ -1283,6 +1301,7 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
             var el2 = dom.createElement("img");
             dom.setAttribute(el2,"src","/assets/images/impact-hub-logo.png");
             dom.setAttribute(el2,"alt","Impact Hub Logo");
+            dom.setAttribute(el2,"style","padding:5px;");
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n    ");
             dom.appendChild(el1, el2);
@@ -1317,7 +1336,7 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
             } else {
               fragment = this.build(dom);
             }
-            var morph0 = dom.createMorphAt(dom.childAt(fragment, [7]),0,0);
+            var morph0 = dom.createMorphAt(dom.childAt(fragment, [13]),0,0);
             block(env, morph0, context, "link-to", ["sponsorship"], {}, child0, null);
             return fragment;
           }
@@ -1969,6 +1988,12 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
             var el0 = dom.createDocumentFragment();
             var el1 = dom.createTextNode("    ");
             dom.appendChild(el0, el1);
+            var el1 = dom.createElement("h1");
+            var el2 = dom.createTextNode("Gold Level Sponsors");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n    ");
+            dom.appendChild(el0, el1);
             var el1 = dom.createElement("h2");
             var el2 = dom.createComment("");
             dom.appendChild(el1, el2);
@@ -1997,7 +2022,7 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
             } else {
               fragment = this.build(dom);
             }
-            var morph0 = dom.createMorphAt(dom.childAt(fragment, [1]),0,0);
+            var morph0 = dom.createMorphAt(dom.childAt(fragment, [3]),0,0);
             block(env, morph0, context, "link-to", ["sponsorship"], {}, child0, null);
             return fragment;
           }
@@ -2053,16 +2078,10 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
           hasRendered: false,
           build: function build(dom) {
             var el0 = dom.createDocumentFragment();
-            var el1 = dom.createTextNode("\n    ");
+            var el1 = dom.createTextNode("    ");
             dom.appendChild(el0, el1);
-            var el1 = dom.createElement("img");
-            dom.setAttribute(el1,"src","/assets/images/sungard-logo.jpg");
-            dom.setAttribute(el1,"alt","SunGard Logo");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n\n    ");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createElement("p");
-            var el2 = dom.createTextNode("\n      SunGard’s Consulting Services help you identify and implement best\n      practice solutions to address your unique business challenges. These\n      efficiently delivered solutions help you transform your business with\n      targeted investments toward growth, optimized efficiency and predictable\n      total cost of ownership (TCO), and well-managed risk and compliance around\n      business operations.\n    ");
+            var el1 = dom.createElement("h2");
+            var el2 = dom.createTextNode("Silver Level Sponsors");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n    ");
@@ -2070,7 +2089,19 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
             var el1 = dom.createElement("a");
             dom.setAttribute(el1,"href","http://financialsystems.sungard.com/services/consulting-services");
             dom.setAttribute(el1,"title","SunGard Consulting Services Website");
-            var el2 = dom.createTextNode("\n      SunGard Consulting Services Website\n    ");
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("img");
+            dom.setAttribute(el2,"src","/assets/images/sungard-logo.jpg");
+            dom.setAttribute(el2,"alt","SunGard Logo");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("\n      SunGard’s Consulting Services help you identify and implement best\n      practice solutions to address your unique business challenges. These\n      efficiently delivered solutions help you transform your business with\n      targeted investments toward growth, optimized efficiency and predictable\n      total cost of ownership (TCO), and well-managed risk and compliance around\n      business operations.\n    ");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n");
@@ -2150,24 +2181,55 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
           hasRendered: false,
           build: function build(dom) {
             var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("h3");
+            var el2 = dom.createTextNode("Bronze Level Sponsors");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("a");
+            dom.setAttribute(el1,"href","https://www.promptworks.com/");
+            dom.setAttribute(el1,"title","Promptworks");
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("img");
+            dom.setAttribute(el2,"src","/assets/images/promptworks-logo.png");
+            dom.setAttribute(el2,"alt","Promptworks Logo");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("The premier Philadelphia software consulting shop. We help businesses build web apps & APIs, automate processes, and scale existing products.");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n  ");
             dom.appendChild(el0, el1);
-            var el1 = dom.createElement("img");
-            dom.setAttribute(el1,"src","/assets/images/impact-hub-logo.png");
-            dom.setAttribute(el1,"alt","Impact Hub Logo");
+            var el1 = dom.createElement("a");
+            dom.setAttribute(el1,"href","http://www.impacthub.net/");
+            dom.setAttribute(el1,"title","Impact Hub Website");
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("img");
+            dom.setAttribute(el2,"src","/assets/images/impact-hub-logo.png");
+            dom.setAttribute(el2,"alt","Impact Hub Logo");
+            dom.setAttribute(el2,"style","padding-top: 10px;");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n  ");
+            dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n  ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("p");
             var el2 = dom.createTextNode("\n    An innovation lab. A business Incubator. A social enterprise community\n    center. Impact Hub offers you a unique ecosystem of resources,\n    inspiration, and collaboration opportunities to grow the positive impact\n    of your work. Joining our diverse community of members and collaborators\n    will inspire, connect, and enable you to develop your best work every step\n    of the way.\n  ");
-            dom.appendChild(el1, el2);
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n\n  ");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createElement("a");
-            dom.setAttribute(el1,"href","http://www.impacthub.net/");
-            dom.setAttribute(el1,"title","Impact Hub Website");
-            var el2 = dom.createTextNode("\n    Impact Hub Website\n  ");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n");
@@ -2176,6 +2238,7 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
           },
           render: function render(context, env, contextualElement) {
             var dom = env.dom;
+            var hooks = env.hooks, content = hooks.content;
             dom.detectNamespace(contextualElement);
             var fragment;
             if (env.useFragmentCache && dom.canClone) {
@@ -2193,6 +2256,8 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
             } else {
               fragment = this.build(dom);
             }
+            var morph0 = dom.createMorphAt(fragment,7,7,contextualElement);
+            content(env, morph0, context, "paper-divider");
             return fragment;
           }
         };
@@ -5438,7 +5503,7 @@ catch(err) {
 if (runningTests) {
   require("libertyjs-dev/tests/test-helper");
 } else {
-  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.2caaad29"});
+  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.15ac5f50"});
 }
 
 /* jshint ignore:end */
