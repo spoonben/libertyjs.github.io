@@ -2699,30 +2699,6 @@ define('libertyjs-dev/sponsorship/template', ['exports'], function (exports) {
             var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("h3");
-            var el2 = dom.createTextNode("Recruiting at LibertyJS");
-            dom.appendChild(el1, el2);
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n\n    ");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createElement("p");
-            var el2 = dom.createTextNode("\n      Let's be honest. The kind of people who are so interested in JavaScript that they're coming to a community event on a Saturday are ");
-            dom.appendChild(el1, el2);
-            var el2 = dom.createElement("em");
-            var el3 = dom.createTextNode("exactly");
-            dom.appendChild(el2, el3);
-            dom.appendChild(el1, el2);
-            var el2 = dom.createTextNode(" the people you want to hire, and we have attendees who are looking for jobs.\n    ");
-            dom.appendChild(el1, el2);
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n\n    ");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createElement("p");
-            var el2 = dom.createTextNode("\n      With that in mind, we will have a \"Hiring\" board for attendees to see sponsors' positions (posted prominently), and attendees will also be able to share positions (at a smaller size) at their own firms. It's our hope that in this way we can authentically help our attendees and community members match to positions of interest, and also provide value to our sponsors. We reserve the right to remove any listing that violates our Code of Conduct, or is from a recruiting firm that is not a sponsor.\n    ");
-            dom.appendChild(el1, el2);
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n\n    ");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createElement("h3");
             var el2 = dom.createTextNode("How to Sponsor?");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
@@ -5570,7 +5546,7 @@ catch(err) {
 if (runningTests) {
   require("libertyjs-dev/tests/test-helper");
 } else {
-  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.bdb654da"});
+  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.6db51fd2"});
 }
 
 /* jshint ignore:end */
