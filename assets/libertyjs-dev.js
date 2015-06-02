@@ -1279,8 +1279,22 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
             var el1 = dom.createTextNode("\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("a");
+            dom.setAttribute(el1,"href","http://chariotsolutions.com/");
+            dom.setAttribute(el1,"title","Chariot Solutions");
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("img");
+            dom.setAttribute(el2,"src","/assets/images/ChariotLogo.jpg");
+            dom.setAttribute(el2,"alt","Chariot logo");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("a");
             dom.setAttribute(el1,"href","http://financialsystems.sungard.com/services/consulting-services");
-            dom.setAttribute(el1,"title","SunGard Consulting Services Website");
+            dom.setAttribute(el1,"title","SunGard Consulting Services");
             var el2 = dom.createTextNode("\n      ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("img");
@@ -1355,7 +1369,7 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
             } else {
               fragment = this.build(dom);
             }
-            var morph0 = dom.createMorphAt(dom.childAt(fragment, [13]),0,0);
+            var morph0 = dom.createMorphAt(dom.childAt(fragment, [15]),0,0);
             block(env, morph0, context, "link-to", ["sponsorship"], {}, child0, null);
             return fragment;
           }
@@ -2101,6 +2115,26 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("h2");
             var el2 = dom.createTextNode("Silver Level Sponsors");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("a");
+            dom.setAttribute(el1,"href","http://chariotsolutions.com/");
+            dom.setAttribute(el1,"title","Chariot Solutions");
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("img");
+            dom.setAttribute(el2,"src","/assets/images/ChariotLogo.jpg");
+            dom.setAttribute(el2,"alt","Chariot logo");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("Passionate About Technology: If those three words describe you, you'll feel right at home at Chariot. We are a tight knit group of software professionals, putting our expertise to work for Philadelphia area companies every day.");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n    ");
@@ -5546,7 +5580,7 @@ catch(err) {
 if (runningTests) {
   require("libertyjs-dev/tests/test-helper");
 } else {
-  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.6db51fd2"});
+  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.eb5ee9c6"});
 }
 
 /* jshint ignore:end */
