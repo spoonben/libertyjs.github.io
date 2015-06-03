@@ -2901,19 +2901,13 @@ define('libertyjs-dev/sponsorship/template', ['exports'], function (exports) {
             var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("h4");
-            var el2 = dom.createTextNode("Taken: ");
-            dom.appendChild(el1, el2);
-            var el2 = dom.createElement("s");
-            var el3 = dom.createTextNode("Lunch Sponsor: $1500");
-            dom.appendChild(el2, el3);
+            var el2 = dom.createTextNode("Lunch Sponsor: $1500");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
-            var el1 = dom.createElement("s");
-            var el2 = dom.createElement("p");
-            var el3 = dom.createTextNode("\n      Be promoted as lunch sponsor for event, extra signage indicating\n      sponsorship during lunch, and your company may bring 3 company\n      representatives to lunch to mingle with JavaScript developers.\n    ");
-            dom.appendChild(el2, el3);
+            var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("\n      Be promoted as lunch sponsor for event, extra signage indicating\n      sponsorship during lunch, and your company may bring 3 company\n      representatives to lunch to mingle with JavaScript developers.\n    ");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n    ");
@@ -5580,7 +5574,7 @@ catch(err) {
 if (runningTests) {
   require("libertyjs-dev/tests/test-helper");
 } else {
-  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.eb5ee9c6"});
+  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.3a3eee6e"});
 }
 
 /* jshint ignore:end */
