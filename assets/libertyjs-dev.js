@@ -1341,6 +1341,22 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
             var el1 = dom.createTextNode("\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("a");
+            dom.setAttribute(el1,"href","https://www.monetate.com/");
+            dom.setAttribute(el1,"title","Monetate");
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("img");
+            dom.setAttribute(el2,"src","/assets/images/monetate-logo.png");
+            dom.setAttribute(el2,"alt","Monetate Logo");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("br");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("a");
             dom.setAttribute(el1,"href","http://www.impacthub.net/");
             dom.setAttribute(el1,"title","Impact Hub Website");
             var el2 = dom.createTextNode("\n      ");
@@ -1383,7 +1399,7 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
             } else {
               fragment = this.build(dom);
             }
-            var morph0 = dom.createMorphAt(dom.childAt(fragment, [15]),0,0);
+            var morph0 = dom.createMorphAt(dom.childAt(fragment, [18]),0,0);
             block(env, morph0, context, "link-to", ["sponsorship"], {}, child0, null);
             return fragment;
           }
@@ -3797,7 +3813,32 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
             dom.appendChild(el0, el1);
             var el1 = dom.createComment("");
             dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n  ");
+            var el1 = dom.createTextNode("\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("a");
+            dom.setAttribute(el1,"href","https://www.monetate.com/");
+            dom.setAttribute(el1,"title","Monetate");
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("img");
+            dom.setAttribute(el2,"src","/assets/images/monetate-logo.png");
+            dom.setAttribute(el2,"alt","Monetate Logo");
+            dom.setAttribute(el2,"style","padding-top: 10px;");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("Monetate empowers marketers to leverage big data to create more personalized and engaging online customer experiences. By providing a more relevant web experience and anticipating and reacting to consumer behavior, leading brands generate stronger, more profitable customer relationships.");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n  ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("a");
             dom.setAttribute(el1,"href","http://www.impacthub.net/");
@@ -3843,7 +3884,9 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
               fragment = this.build(dom);
             }
             var morph0 = dom.createMorphAt(fragment,7,7,contextualElement);
+            var morph1 = dom.createMorphAt(fragment,13,13,contextualElement);
             content(env, morph0, context, "paper-divider");
+            content(env, morph1, context, "paper-divider");
             return fragment;
           }
         };
@@ -7142,7 +7185,7 @@ catch(err) {
 if (runningTests) {
   require("libertyjs-dev/tests/test-helper");
 } else {
-  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.5646bc4e"});
+  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.6caa494e"});
 }
 
 /* jshint ignore:end */
