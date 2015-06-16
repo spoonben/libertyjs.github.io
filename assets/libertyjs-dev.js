@@ -1234,42 +1234,6 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
     }());
     var child2 = (function() {
       var child0 = (function() {
-        var child0 = (function() {
-          return {
-            isHTMLBars: true,
-            revision: "Ember@1.12.0",
-            blockParams: 0,
-            cachedFragment: null,
-            hasRendered: false,
-            build: function build(dom) {
-              var el0 = dom.createDocumentFragment();
-              var el1 = dom.createTextNode("Interested in sponsoring?");
-              dom.appendChild(el0, el1);
-              return el0;
-            },
-            render: function render(context, env, contextualElement) {
-              var dom = env.dom;
-              dom.detectNamespace(contextualElement);
-              var fragment;
-              if (env.useFragmentCache && dom.canClone) {
-                if (this.cachedFragment === null) {
-                  fragment = this.build(dom);
-                  if (this.hasRendered) {
-                    this.cachedFragment = fragment;
-                  } else {
-                    this.hasRendered = true;
-                  }
-                }
-                if (this.cachedFragment) {
-                  fragment = dom.cloneNode(this.cachedFragment, true);
-                }
-              } else {
-                fragment = this.build(dom);
-              }
-              return fragment;
-            }
-          };
-        }());
         return {
           isHTMLBars: true,
           revision: "Ember@1.12.0",
@@ -1285,6 +1249,40 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("h3");
+            var el2 = dom.createTextNode("Gold");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("a");
+            dom.setAttribute(el1,"href","http://www.elsevier.com/");
+            dom.setAttribute(el1,"title","Elsevier");
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("img");
+            dom.setAttribute(el2,"src","/assets/images/elsevier-logo.jpg");
+            dom.setAttribute(el2,"alt","Elsevier logo");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("a");
+            dom.setAttribute(el1,"href","http://www.teksystems.com/");
+            dom.setAttribute(el1,"title","TEKsystems");
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("img");
+            dom.setAttribute(el2,"src","/assets/images/teksystems-logo.jpg");
+            dom.setAttribute(el2,"alt","TEKsystems logo");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("h3");
             var el2 = dom.createTextNode("Silver");
@@ -1357,6 +1355,23 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
             var el1 = dom.createTextNode("\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("a");
+            dom.setAttribute(el1,"href","http://www.aweber.com/home.htm");
+            dom.setAttribute(el1,"title","AWeber");
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("img");
+            dom.setAttribute(el2,"src","/assets/images/aweber-logo.png");
+            dom.setAttribute(el2,"alt","AWeber Logo");
+            dom.setAttribute(el2,"style","padding:5px;");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("br");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("a");
             dom.setAttribute(el1,"href","http://www.impacthub.net/");
             dom.setAttribute(el1,"title","Impact Hub Website");
             var el2 = dom.createTextNode("\n      ");
@@ -1369,19 +1384,12 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
             var el2 = dom.createTextNode("\n    ");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n    ");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createElement("h2");
-            var el2 = dom.createComment("");
-            dom.appendChild(el1, el2);
-            dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n");
             dom.appendChild(el0, el1);
             return el0;
           },
           render: function render(context, env, contextualElement) {
             var dom = env.dom;
-            var hooks = env.hooks, block = hooks.block;
             dom.detectNamespace(contextualElement);
             var fragment;
             if (env.useFragmentCache && dom.canClone) {
@@ -1399,8 +1407,6 @@ define('libertyjs-dev/index/template', ['exports'], function (exports) {
             } else {
               fragment = this.build(dom);
             }
-            var morph0 = dom.createMorphAt(dom.childAt(fragment, [18]),0,0);
-            block(env, morph0, context, "link-to", ["sponsorship"], {}, child0, null);
             return fragment;
           }
         };
@@ -1829,7 +1835,7 @@ define('libertyjs-dev/schedule/template', ['exports'], function (exports) {
             var el2 = dom.createTextNode("Track 1  - ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("strong");
-            var el3 = dom.createTextNode("Douglas Grogg");
+            var el3 = dom.createTextNode("Douglas Grogg, Justin Thomas and Alexandra Hoefinger");
             dom.appendChild(el2, el3);
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode(" - Ditch Your Framework, or How we learned to stop worrying and love ES6");
@@ -2723,7 +2729,7 @@ define('libertyjs-dev/speakers/template', ['exports'], function (exports) {
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("h3");
             dom.setAttribute(el1,"id","douglasgrogg");
-            var el2 = dom.createTextNode("\n      Douglas Grogg - Ditch Your Framework, or How we learned to stop worrying\n      and love ES6\n    ");
+            var el2 = dom.createTextNode("\n      Douglas Grogg, Justin Thomas and Alexandra Hoefinger - Ditch Your\n      Framework, or How we learned to stop worrying and love ES6\n    ");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n    ");
@@ -3628,12 +3634,6 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
             var el1 = dom.createTextNode("    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("h1");
-            var el2 = dom.createTextNode("Gold Level Sponsors");
-            dom.appendChild(el1, el2);
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n    ");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createElement("h2");
             var el2 = dom.createComment("");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
@@ -3661,7 +3661,7 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
             } else {
               fragment = this.build(dom);
             }
-            var morph0 = dom.createMorphAt(dom.childAt(fragment, [3]),0,0);
+            var morph0 = dom.createMorphAt(dom.childAt(fragment, [1]),0,0);
             block(env, morph0, context, "link-to", ["sponsorship"], {}, child0, null);
             return fragment;
           }
@@ -3719,20 +3719,20 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
             var el0 = dom.createDocumentFragment();
             var el1 = dom.createTextNode("    ");
             dom.appendChild(el0, el1);
-            var el1 = dom.createElement("h2");
-            var el2 = dom.createTextNode("Silver Level Sponsors");
+            var el1 = dom.createElement("h1");
+            var el2 = dom.createTextNode("Gold Level Sponsors");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("a");
-            dom.setAttribute(el1,"href","http://chariotsolutions.com/");
-            dom.setAttribute(el1,"title","Chariot Solutions");
+            dom.setAttribute(el1,"href","http://www.elsevier.com/");
+            dom.setAttribute(el1,"title","Elsevier");
             var el2 = dom.createTextNode("\n      ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("img");
-            dom.setAttribute(el2,"src","/assets/images/ChariotLogo.jpg");
-            dom.setAttribute(el2,"alt","Chariot logo");
+            dom.setAttribute(el2,"src","/assets/images/elsevier-logo.jpg");
+            dom.setAttribute(el2,"alt","Elsevier logo");
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n    ");
             dom.appendChild(el1, el2);
@@ -3740,19 +3740,27 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
             var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("p");
-            var el2 = dom.createTextNode("Passionate About Technology: If those three words describe you, you'll feel right at home at Chariot. We are a tight knit group of software professionals, putting our expertise to work for Philadelphia area companies every day.");
+            var el2 = dom.createTextNode("Elsevier is a global leader in the development and dissemination of scientific, technological and medical knowledge. We serve researchers, professionals, and clinicians, through the application of technology and analytics to content, empowering them to create knowledge, contribute to social progress, and enhance human well being. This is what Elsevier means to humankind today. Translate that into career fulfillment and you will know the real benefits of joining a company of people that is constantly innovating to inspire ground breaking research.");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n    ");
+            dom.appendChild(el0, el1);
             var el1 = dom.createElement("a");
-            dom.setAttribute(el1,"href","http://financialsystems.sungard.com/services/consulting-services");
-            dom.setAttribute(el1,"title","SunGard Consulting Services Website");
+            dom.setAttribute(el1,"href","http://www.teksystems.com/");
+            dom.setAttribute(el1,"title","TEKsystems");
             var el2 = dom.createTextNode("\n      ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("img");
-            dom.setAttribute(el2,"src","/assets/images/sungard-logo.jpg");
-            dom.setAttribute(el2,"alt","SunGard Logo");
+            dom.setAttribute(el2,"src","/assets/images/teksystems-logo.jpg");
+            dom.setAttribute(el2,"alt","TEKsystems logo");
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n    ");
             dom.appendChild(el1, el2);
@@ -3760,7 +3768,7 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
             var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("p");
-            var el2 = dom.createTextNode("\n      SunGard’s Consulting Services help you identify and implement best\n      practice solutions to address your unique business challenges. These\n      efficiently delivered solutions help you transform your business with\n      targeted investments toward growth, optimized efficiency and predictable\n      total cost of ownership (TCO), and well-managed risk and compliance around\n      business operations.\n    ");
+            var el2 = dom.createTextNode("\n      People are at the heart of every successful business initiative. At\n      TEKsystems, a leading provider of IT staffing, IT talent management and IT\n      services, we understand people. Every year we deploy over 80,000 IT\n      professionals at 6,000 client sites across North America, Europe and Asia.\n      Our deep insights into the IT labor market enable us to help clients\n      achieve their business goals—while optimizing their IT workforce\n      strategies.\n    ");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n");
@@ -3769,6 +3777,7 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
           },
           render: function render(context, env, contextualElement) {
             var dom = env.dom;
+            var hooks = env.hooks, content = hooks.content;
             dom.detectNamespace(contextualElement);
             var fragment;
             if (env.useFragmentCache && dom.canClone) {
@@ -3786,6 +3795,8 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
             } else {
               fragment = this.build(dom);
             }
+            var morph0 = dom.createMorphAt(fragment,7,7,contextualElement);
+            content(env, morph0, context, "paper-divider");
             return fragment;
           }
         };
@@ -3842,78 +3853,52 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
             var el0 = dom.createDocumentFragment();
             var el1 = dom.createTextNode("    ");
             dom.appendChild(el0, el1);
-            var el1 = dom.createElement("h3");
-            var el2 = dom.createTextNode("Bronze Level Sponsors");
+            var el1 = dom.createElement("h2");
+            var el2 = dom.createTextNode("Silver Level Sponsors");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n    ");
+            var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("a");
-            dom.setAttribute(el1,"href","https://www.promptworks.com/");
-            dom.setAttribute(el1,"title","Promptworks");
+            dom.setAttribute(el1,"href","http://chariotsolutions.com/");
+            dom.setAttribute(el1,"title","Chariot Solutions");
             var el2 = dom.createTextNode("\n      ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("img");
-            dom.setAttribute(el2,"src","/assets/images/promptworks-logo.png");
-            dom.setAttribute(el2,"alt","Promptworks Logo");
+            dom.setAttribute(el2,"src","/assets/images/ChariotLogo.jpg");
+            dom.setAttribute(el2,"alt","Chariot logo");
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n    ");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n    ");
+            var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("p");
-            var el2 = dom.createTextNode("The premier Philadelphia software consulting shop. We help businesses build web apps & APIs, automate processes, and scale existing products.");
+            var el2 = dom.createTextNode("Passionate About Technology: If those three words describe you, you'll feel right at home at Chariot. We are a tight knit group of software professionals, putting our expertise to work for Philadelphia area companies every day.");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n");
+            var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createComment("");
             dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n    ");
+            var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("a");
-            dom.setAttribute(el1,"href","https://www.monetate.com/");
-            dom.setAttribute(el1,"title","Monetate");
+            dom.setAttribute(el1,"href","http://financialsystems.sungard.com/services/consulting-services");
+            dom.setAttribute(el1,"title","SunGard Consulting Services Website");
             var el2 = dom.createTextNode("\n      ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("img");
-            dom.setAttribute(el2,"src","/assets/images/monetate-logo.png");
-            dom.setAttribute(el2,"alt","Monetate Logo");
-            dom.setAttribute(el2,"style","padding-top: 10px;");
+            dom.setAttribute(el2,"src","/assets/images/sungard-logo.jpg");
+            dom.setAttribute(el2,"alt","SunGard Logo");
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n    ");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n    ");
+            var el1 = dom.createTextNode("\n\n    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("p");
-            var el2 = dom.createTextNode("Monetate empowers marketers to leverage big data to create more personalized and engaging online customer experiences. By providing a more relevant web experience and anticipating and reacting to consumer behavior, leading brands generate stronger, more profitable customer relationships.");
-            dom.appendChild(el1, el2);
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n\n");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createComment("");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n\n  ");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createElement("a");
-            dom.setAttribute(el1,"href","http://www.impacthub.net/");
-            dom.setAttribute(el1,"title","Impact Hub Website");
-            var el2 = dom.createTextNode("\n    ");
-            dom.appendChild(el1, el2);
-            var el2 = dom.createElement("img");
-            dom.setAttribute(el2,"src","/assets/images/impact-hub-logo.png");
-            dom.setAttribute(el2,"alt","Impact Hub Logo");
-            dom.setAttribute(el2,"style","padding-top: 10px;");
-            dom.appendChild(el1, el2);
-            var el2 = dom.createTextNode("\n  ");
-            dom.appendChild(el1, el2);
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n\n  ");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createElement("p");
-            var el2 = dom.createTextNode("\n    An innovation lab. A business Incubator. A social enterprise community\n    center. Impact Hub offers you a unique ecosystem of resources,\n    inspiration, and collaboration opportunities to grow the positive impact\n    of your work. Joining our diverse community of members and collaborators\n    will inspire, connect, and enable you to develop your best work every step\n    of the way.\n  ");
+            var el2 = dom.createTextNode("\n      SunGard’s Consulting Services help you identify and implement best\n      practice solutions to address your unique business challenges. These\n      efficiently delivered solutions help you transform your business with\n      targeted investments toward growth, optimized efficiency and predictable\n      total cost of ownership (TCO), and well-managed risk and compliance around\n      business operations.\n    ");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n\n");
@@ -3941,9 +3926,7 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
               fragment = this.build(dom);
             }
             var morph0 = dom.createMorphAt(fragment,7,7,contextualElement);
-            var morph1 = dom.createMorphAt(fragment,13,13,contextualElement);
             content(env, morph0, context, "paper-divider");
-            content(env, morph1, context, "paper-divider");
             return fragment;
           }
         };
@@ -3989,6 +3972,191 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
       };
     }());
     var child4 = (function() {
+      var child0 = (function() {
+        return {
+          isHTMLBars: true,
+          revision: "Ember@1.12.0",
+          blockParams: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          build: function build(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("h3");
+            var el2 = dom.createTextNode("Bronze Level Sponsors");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("a");
+            dom.setAttribute(el1,"href","https://www.promptworks.com/");
+            dom.setAttribute(el1,"title","Promptworks");
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("img");
+            dom.setAttribute(el2,"src","/assets/images/promptworks-logo.png");
+            dom.setAttribute(el2,"alt","Promptworks Logo");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("The premier Philadelphia software consulting shop. We help businesses build web apps & APIs, automate processes, and scale existing products.");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("a");
+            dom.setAttribute(el1,"href","https://www.monetate.com/");
+            dom.setAttribute(el1,"title","Monetate");
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("img");
+            dom.setAttribute(el2,"src","/assets/images/monetate-logo.png");
+            dom.setAttribute(el2,"alt","Monetate Logo");
+            dom.setAttribute(el2,"style","padding-top: 10px;");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("Monetate empowers marketers to leverage big data to create more personalized and engaging online customer experiences. By providing a more relevant web experience and anticipating and reacting to consumer behavior, leading brands generate stronger, more profitable customer relationships.");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("a");
+            dom.setAttribute(el1,"href","http://www.aweber.com/home.htm");
+            dom.setAttribute(el1,"title","AWeber");
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("img");
+            dom.setAttribute(el2,"src","/assets/images/aweber-logo.png");
+            dom.setAttribute(el2,"alt","AWeber Logo");
+            dom.setAttribute(el2,"style","padding-top:10px;");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("AWeber develops and runs an opt-in email marketing service used by over 120,000+ small businesses, bloggers and entrepreneurs around the globe. Our web-based tools help businesses grow by staying in touch with customers and prospects through email.");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("a");
+            dom.setAttribute(el1,"href","http://www.impacthub.net/");
+            dom.setAttribute(el1,"title","Impact Hub Website");
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("img");
+            dom.setAttribute(el2,"src","/assets/images/impact-hub-logo.png");
+            dom.setAttribute(el2,"alt","Impact Hub Logo");
+            dom.setAttribute(el2,"style","padding-top: 10px;");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("p");
+            var el2 = dom.createTextNode("\n      An innovation lab. A business Incubator. A social enterprise community\n      center. Impact Hub offers you a unique ecosystem of resources,\n      inspiration, and collaboration opportunities to grow the positive impact\n      of your work. Joining our diverse community of members and collaborators\n      will inspire, connect, and enable you to develop your best work every step\n      of the way.\n    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n\n");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          render: function render(context, env, contextualElement) {
+            var dom = env.dom;
+            var hooks = env.hooks, content = hooks.content;
+            dom.detectNamespace(contextualElement);
+            var fragment;
+            if (env.useFragmentCache && dom.canClone) {
+              if (this.cachedFragment === null) {
+                fragment = this.build(dom);
+                if (this.hasRendered) {
+                  this.cachedFragment = fragment;
+                } else {
+                  this.hasRendered = true;
+                }
+              }
+              if (this.cachedFragment) {
+                fragment = dom.cloneNode(this.cachedFragment, true);
+              }
+            } else {
+              fragment = this.build(dom);
+            }
+            var morph0 = dom.createMorphAt(fragment,7,7,contextualElement);
+            var morph1 = dom.createMorphAt(fragment,13,13,contextualElement);
+            var morph2 = dom.createMorphAt(fragment,19,19,contextualElement);
+            content(env, morph0, context, "paper-divider");
+            content(env, morph1, context, "paper-divider");
+            content(env, morph2, context, "paper-divider");
+            return fragment;
+          }
+        };
+      }());
+      return {
+        isHTMLBars: true,
+        revision: "Ember@1.12.0",
+        blockParams: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        build: function build(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        render: function render(context, env, contextualElement) {
+          var dom = env.dom;
+          var hooks = env.hooks, block = hooks.block;
+          dom.detectNamespace(contextualElement);
+          var fragment;
+          if (env.useFragmentCache && dom.canClone) {
+            if (this.cachedFragment === null) {
+              fragment = this.build(dom);
+              if (this.hasRendered) {
+                this.cachedFragment = fragment;
+              } else {
+                this.hasRendered = true;
+              }
+            }
+            if (this.cachedFragment) {
+              fragment = dom.cloneNode(this.cachedFragment, true);
+            }
+          } else {
+            fragment = this.build(dom);
+          }
+          var morph0 = dom.createMorphAt(fragment,0,0,contextualElement);
+          dom.insertBoundary(fragment, null);
+          dom.insertBoundary(fragment, 0);
+          block(env, morph0, context, "paper-card-content", [], {}, child0, null);
+          return fragment;
+        }
+      };
+    }());
+    var child5 = (function() {
       var child0 = (function() {
         var child0 = (function() {
           return {
@@ -4136,6 +4304,10 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
         dom.appendChild(el0, el1);
         var el1 = dom.createComment("");
         dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
         return el0;
       },
       render: function render(context, env, contextualElement) {
@@ -4163,6 +4335,7 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
         var morph2 = dom.createMorphAt(fragment,4,4,contextualElement);
         var morph3 = dom.createMorphAt(fragment,6,6,contextualElement);
         var morph4 = dom.createMorphAt(fragment,8,8,contextualElement);
+        var morph5 = dom.createMorphAt(fragment,10,10,contextualElement);
         dom.insertBoundary(fragment, null);
         dom.insertBoundary(fragment, 0);
         block(env, morph0, context, "paper-toolbar", [], {}, child0, null);
@@ -4170,6 +4343,7 @@ define('libertyjs-dev/sponsors/template', ['exports'], function (exports) {
         block(env, morph2, context, "paper-card", [], {}, child2, null);
         block(env, morph3, context, "paper-card", [], {}, child3, null);
         block(env, morph4, context, "paper-card", [], {}, child4, null);
+        block(env, morph5, context, "paper-card", [], {}, child5, null);
         return fragment;
       }
     };
@@ -7242,7 +7416,7 @@ catch(err) {
 if (runningTests) {
   require("libertyjs-dev/tests/test-helper");
 } else {
-  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.770ac038"});
+  require("libertyjs-dev/app")["default"].create({"name":"libertyjs-dev","version":"0.0.0.0576221e"});
 }
 
 /* jshint ignore:end */
